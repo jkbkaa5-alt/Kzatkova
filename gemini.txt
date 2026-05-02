@@ -1,4 +1,0 @@
-gemini --resume '5415f2e5-cdc5-4ba8-8057-f7e9d20327bd'
-gemini --resume '5415f2e5-cdc5-4ba8-8057-f7e9d20327bd'
-
-make the behind image in index.html title 50% smaller so the full person on the image can be seen. keep everything else the same.
