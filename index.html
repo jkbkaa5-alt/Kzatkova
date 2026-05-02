@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profesionální permanentní make-up v Brně. Specializace na PhiBrows microblading, pudrové obočí a rty. Zvýrazněte svou přirozenou krásu u Kataríny Zaťkové.">
+    <meta name="keywords" content="permanentní make-up, Brno, PhiBrows, microblading, pudrové obočí, rty, tetování obočí, Katarína Zaťková">
+    <meta name="author" content="Katarína Zaťková">
+    <title>Katarína Zaťková | Permanentní Make-up Brno | PhiBrows Specialistka</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#FFFDF9',
+                        'soft-pink': '#FCE4EC',
+                        'soft-pink-dark': '#F8BBD0',
+                        'rose-gold': '#B76E79',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .reveal, .fade-in { 
+            opacity: 0; 
+            transform: translateY(30px); 
+            transition: opacity 1.8s cubic-bezier(0.2, 1, 0.3, 1), transform 1.8s cubic-bezier(0.2, 1, 0.3, 1); 
+        }
+        .reveal.visible, .fade-in.visible { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        
+        .glass { background: rgba(255, 253, 249, 0.8); backdrop-filter: blur(8px); }
+        
+        /* Dropdown Styles */
+        .dropdown-menu { display: none; }
+        .dropdown-menu.show { display: block; }
+    </style>
+</head>
+<body class="bg-cream text-gray-800 font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-soft-pink">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-serif text-lg md:text-xl font-bold text-rose-gold tracking-wide">Permanentní make-up pro vaši krásu.</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-rose-gold transition-colors duration-300">Domů</a>
+                        <a href="#about" class="hover:text-rose-gold transition-colors duration-300">O mně</a>
+                        <a href="#services" class="hover:text-rose-gold transition-colors duration-300">Služby</a>
+                        <a href="#gallery" class="hover:text-rose-gold transition-colors duration-300">Galerie</a>
+                        <a href="#pricing" class="hover:text-rose-gold transition-colors duration-300">Ceník</a>
+                        
+                        <!-- Dokumenty Dropdown -->
+                        <div class="relative dropdown">
+                            <button id="docs-dropdown-button" class="hover:text-rose-gold transition-colors duration-300 flex items-center gap-1 outline-none">
+                                Dokumenty
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div id="docs-dropdown-menu" class="dropdown-menu absolute left-0 mt-2 w-64 bg-cream border border-soft-pink rounded-xl shadow-xl z-50 overflow-hidden">
+                                <a href="documents/Informace o zpracování osobních údajů společnosti Katarína Zaťková Fuchsia.pdf" target="_blank" class="block px-4 py-3 hover:bg-soft-pink text-sm transition-colors border-b border-soft-pink">GDPR - Ochrana údajů</a>
+                                <a href="documents/Informovaný souhlas - oprava starého PMU.pdf" target="_blank" class="block px-4 py-3 hover:bg-soft-pink text-sm transition-colors border-b border-soft-pink">Souhlas - oprava starého PMU</a>
+                                <a href="documents/Informovaný souhlas.pdf" target="_blank" class="block px-4 py-3 hover:bg-soft-pink text-sm transition-colors border-b border-soft-pink">Informovaný souhlas</a>
+                                <a href="documents/Všeobecný-průvodce.pdf" target="_blank" class="block px-4 py-3 hover:bg-soft-pink text-sm transition-colors">Všeobecný průvodce</a>
+                            </div>
+                        </div>
+
+                        <a href="obchodni-podminky.html" class="hover:text-rose-gold transition-colors duration-300">Podmínky</a>
+                        <a href="#contact" class="hover:text-rose-gold transition-colors duration-300">Kontakt</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden text-center flex items-center">
+                    <button id="mobile-menu-button" class="p-2 text-rose-gold" aria-label="Otevřít menu">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-soft-pink">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 hover:bg-soft-pink">Domů</a>
+                <a href="#about" class="block px-3 py-2 hover:bg-soft-pink">O mně</a>
+                <a href="#services" class="block px-3 py-2 hover:bg-soft-pink">Služby</a>
+                <a href="#gallery" class="block px-3 py-2 hover:bg-soft-pink">Galerie</a>
+                <a href="#pricing" class="block px-3 py-2 hover:bg-soft-pink">Ceník</a>
+                <a href="obchodni-podminky.html" class="block px-3 py-2 hover:bg-soft-pink">Podmínky</a>
+                
+                <!-- Mobile Documents -->
+                <div class="px-3 py-2 font-medium text-rose-gold border-t border-soft-pink mt-2">Dokumenty ke stažení:</div>
+                <a href="documents/Informace o zpracování osobních údajů společnosti Katarína Zaťková Fuchsia.pdf" target="_blank" class="block px-6 py-2 hover:bg-soft-pink text-sm">GDPR - Ochrana údajů</a>
+                <a href="documents/Informovaný souhlas - oprava starého PMU.pdf" target="_blank" class="block px-6 py-2 hover:bg-soft-pink text-sm">Souhlas - oprava starého PMU</a>
+                <a href="documents/Informovaný souhlas.pdf" target="_blank" class="block px-6 py-2 hover:bg-soft-pink text-sm">Informovaný souhlas</a>
+                <a href="documents/Všeobecný-průvodce.pdf" target="_blank" class="block px-6 py-2 hover:bg-soft-pink text-sm pb-4">Všeobecný průvodce</a>
+
+                <a href="#contact" class="block px-3 py-2 hover:bg-soft-pink border-t border-soft-pink">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0 flex items-end justify-end">
+            <!-- Professional Portrait of Katarína Zaťková -->
+            <img src="images/self.png" 
+                 alt="Katarína Zaťková" 
+                 class="max-h-[70%] md:max-h-[85%] w-auto object-contain opacity-50 ml-4 md:ml-20"
+                 style="mask-image: linear-gradient(to bottom, black 50%, transparent 95%); -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 95%);">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-cream"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto fade-in">
+            <!-- SHIFT CONTROL: Change the translation value below to adjust the left shift (e.g., md:-translate-x-12) -->
+            <div class="transform md:-translate-x-40">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
+                    <img src="images/logo.png" alt="Katarína Zaťková Logo" class="h-48 md:h-48 w-auto object-contain">
+                    <h1 class="font-serif text-[2.7rem] md:text-[4.05rem] leading-tight text-center md:text-left">Permamentní make-up<br>Katarína Zaťková</h1>
+                </div>
+                
+                <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Perfektní rty, obočí i oční linky bez námahy. Cítíte se krásná každý den.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact" class="bg-rose-gold text-white px-8 py-4 rounded-full font-medium hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-lg">
+                        Rezervovat termín
+                    </a>
+                    <a href="#services" class="border border-rose-gold text-rose-gold px-8 py-4 rounded-full font-medium hover:bg-soft-pink transition-all">
+                        Naše služby
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O mně Section -->
+    <section id="about" class="py-24 bg-cream">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <h2 class="font-serif text-4xl mb-8 text-rose-gold">O mně</h2>
+            <div class="w-20 h-1 bg-soft-pink mx-auto mb-10"></div>
+            <p class="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                Permanentní make-up je proces, který narušuje integritu kůže. A proto jsou nároky na jeho výkon velmi vysoké. <br>O vaši pokožku se musíme zkrátka dobře postarat a já díky svému zdravotnickému vzdělání vím, jak na to. Vystudovala jsem vysokou školu v oboru všeobecná sestra a v oboru management ve zdravotnictví a ošetřovatelství. Mám dvanáctiletou praxi ve Fakultní nemocnici v Brně, kde jsem působila v chirurgickém prostředí. Permanentnímu make-upu se věnuji už deset let. Vím tedy přesně, jak pečovat o vaše zdraví, aby se obočí nebo rty co nejrychleji a bezproblémově zahojily. <br><br> <i>Katarína Zaťková</i>
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="font-serif text-4xl mb-4">Služby</h2>
+                <div class="w-20 h-1 bg-soft-pink mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Service 1 -->
+                <div class="bg-cream p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-soft-pink reveal reveal-delay-1">
+                    <div class="w-20 h-20 bg-soft-pink rounded-full flex items-center justify-center mb-6 mx-auto p-4">
+                        <img src="images/icons/Eyebrow.svg" alt="Ikona obočí" class="w-full h-full object-contain" style="filter: invert(53%) sepia(10%) saturate(1900%) hue-rotate(305deg) brightness(95%) contrast(88%);">
+                    </div>
+                    <h3 class="font-serif text-2xl mb-4">Obočí</h3>
+                    <p class="text-gray-600 mb-6">
+                        1) Microblading - vláskování ruční nebo strojkovou technikou. Vhodné pro suchou a smíšenou pleť.<br><br>2) Pudrové obočí - strojková technika. Vhodné pro všechny druhy pleti. <br><br> 3) Kombinované obočí - kombinace pudrové a vláskové techniky. Vhodné pro všechny druhy pleti.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-cream p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-soft-pink reveal reveal-delay-2">
+                    <div class="w-20 h-20 bg-soft-pink rounded-full flex items-center justify-center mb-6 mx-auto p-4">
+                        <img src="images/icons/Lips.svg" alt="Ikona rtů" class="w-full h-full object-contain" style="filter: invert(53%) sepia(10%) saturate(1900%) hue-rotate(305deg) brightness(95%) contrast(88%);">
+                    </div>
+                    <h3 class="font-serif text-2xl mb-4">Rty</h3>
+                    <p class="text-gray-600 mb-6">Plnobarevné rty - akvarelová technika která dodává rtům přirozenou barvu, optický objem bez definicí tvrdých kontur.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-cream p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-soft-pink reveal reveal-delay-3">
+                    <div class="w-20 h-20 bg-soft-pink rounded-full flex items-center justify-center mb-6 mx-auto p-4">
+                        <img src="images/icons/Eye.svg" alt="Ikona očních linek" class="w-full h-full object-contain" style="filter: invert(53%) sepia(10%) saturate(1900%) hue-rotate(305deg) brightness(95%) contrast(88%);">
+                    </div>
+                    <h3 class="font-serif text-2xl mb-4">Oční linky</h3>
+                    <p class="text-gray-600 mb-6">Horní oční linky stínovou technikou dle přání klientky.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="font-serif text-4xl mb-4">Moje Práce</h2>
+                <div class="w-20 h-1 bg-soft-pink mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="images/gallery/Snímek obrazovky 2026-05-01 213602.png" class="rounded-lg shadow-sm hover:opacity-90 transition-opacity cursor-pointer fade-in" alt="Galerie permanentní make-up 1">
+                <img src="images/gallery/Snímek obrazovky 2026-05-01 213614.png" class="rounded-lg shadow-sm hover:opacity-90 transition-opacity cursor-pointer fade-in" alt="Galerie permanentní make-up 2">
+                <img src="images/gallery/Snímek obrazovky 2026-05-01 213625.png" class="rounded-lg shadow-sm hover:opacity-90 transition-opacity cursor-pointer fade-in" alt="Galerie permanentní make-up 3">
+                <img src="images/gallery/Snímek obrazovky 2026-05-01 213643.png" class="rounded-lg shadow-sm hover:opacity-90 transition-opacity cursor-pointer fade-in" alt="Galerie permanentní make-up 4">
+            </div>
+
+            <div class="mt-12 text-center fade-in">
+                <a href="gallery.html" class="inline-flex items-center space-x-2 border-b-2 border-rose-gold text-rose-gold font-bold pb-1 hover:text-soft-pink-dark transition-colors group">
+                    <span>Zobrazit celou galerii</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-soft-pink bg-opacity-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="font-serif text-5xl md:text-6xl italic text-rose-gold mb-2">Ceník</h2>
+                <p class="font-serif italic text-gray-500 text-lg">platný od 15.1.2026</p>
+            </div>
+
+            <div class="bg-cream rounded-3xl p-8 md:p-16 shadow-2xl border border-soft-pink fade-in relative overflow-hidden">
+                <!-- Subtle background decoration to mimic the image texture -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-soft-pink opacity-20 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-rose-gold opacity-10 rounded-full -ml-32 -mb-32 blur-3xl"></div>
+                
+                <div class="relative space-y-10">
+                    <!-- Item 1 -->
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-soft-pink pb-6">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-800">Obočí – všechny techniky</h3>
+                            <p class="text-gray-500 italic">vč. korekce do 4 měsíců</p>
+                        </div>
+                        <span class="font-serif italic text-2xl text-rose-gold font-medium whitespace-nowrap">5200 Kč</span>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-soft-pink pb-6">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-800">Rty – všechny techniky</h3>
+                            <p class="text-gray-500 italic">vč. korekce do 4 měsíců</p>
+                        </div>
+                        <span class="font-serif italic text-2xl text-rose-gold font-medium whitespace-nowrap">5200 Kč</span>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-soft-pink pb-6">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-800">Oční linky horní</h3>
+                            <p class="text-gray-500 italic">vč. korekce do 4 měsíců</p>
+                        </div>
+                        <span class="font-serif italic text-2xl text-rose-gold font-medium whitespace-nowrap">3100 Kč</span>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-soft-pink pb-6">
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-800">Microneedling</h3>
+                        <span class="font-serif italic text-2xl text-rose-gold font-medium whitespace-nowrap">1400 Kč</span>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-soft-pink pb-6">
+                        <h3 class="text-xl md:text-2xl text-gray-800 font-medium">Druhá a další korekce do 6 měsíců</h3>
+                        <span class="font-serif italic text-2xl text-rose-gold font-medium whitespace-nowrap">1000 Kč</span>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-soft-pink pb-6">
+                        <h3 class="text-xl md:text-2xl text-gray-800 font-medium">Obnova pigmentu (obočí, rty) v době 0,5 roku – 2 roky</h3>
+                        <span class="font-serif italic text-2xl text-rose-gold font-medium whitespace-nowrap">2500 Kč</span>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-soft-pink pb-6">
+                        <h3 class="text-xl md:text-2xl text-gray-800 font-medium">Obnova pigmentu (obočí, rty) po více jak 2 letech</h3>
+                        <span class="font-serif italic text-2xl text-rose-gold font-medium whitespace-nowrap">3100 Kč</span>
+                    </div>
+
+                    <!-- Item 8 -->
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+                        <h3 class="text-xl md:text-2xl text-gray-800 font-medium">Obnova pigmentu očních linek v době 0,5 – 3 roky</h3>
+                        <span class="font-serif italic text-2xl text-rose-gold font-medium whitespace-nowrap">1900 Kč</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div class="fade-in">
+                    <h2 class="font-serif text-4xl mb-8">Kontaktujte mě</h2>
+                    <p class="text-gray-600 mb-10 leading-relaxed">
+                        Pro objednání termínu mě prosím kontaktujte telefonicky nebo přes sociální sítě. Těším se na vaši návštěvu. 
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-soft-pink rounded-full flex items-center justify-center">
+                                <i data-lucide="phone" class="text-rose-gold"></i>
+                            </div>
+                            <span class="text-lg">+420 602 602 581</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-soft-pink rounded-full flex items-center justify-center">
+                                <i data-lucide="map-pin" class="text-rose-gold"></i>
+                            </div>
+                            <span class="text-lg">Palackého tř. 916/158, 612 00 Brno, Česko <br>IČO: 05335914</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-soft-pink rounded-full flex items-center justify-center">
+                                <i data-lucide="clock" class="text-rose-gold"></i>
+                            </div>
+                            <span class="text-lg">Otevírací doba: dle objednání</span>
+                        </div>
+                        <div class="flex space-x-4 mt-8">
+                            <a href="https://www.instagram.com/kzatkova/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-cream border border-soft-pink rounded-full flex items-center justify-center hover:bg-soft-pink transition-colors overflow-hidden p-3" aria-label="Sledovat na Instagramu">
+                                <img src="images/Instagram_Glyph_Black.png" alt="Instagram" class="w-full h-full object-contain" style="filter: invert(53%) sepia(10%) saturate(1900%) hue-rotate(305deg) brightness(95%) contrast(88%);">
+                            </a>
+                            <a href="https://www.facebook.com/phikatka/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-cream border border-soft-pink rounded-full flex items-center justify-center hover:bg-soft-pink transition-colors overflow-hidden p-3" aria-label="Sledovat na Facebooku">
+                                <img src="images/Facebook_Logo_Secondary.png" alt="Facebook" class="w-full h-full object-contain" style="filter: invert(53%) sepia(10%) saturate(1900%) hue-rotate(305deg) brightness(95%) contrast(88%);">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-3xl overflow-hidden shadow-lg h-96 fade-in">
+                    <!-- Embedded Map Placeholder -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2613.565860431388!2d16.59043341!3d49.2308133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471293b1708378e7%3A0xab43fb721bccb3bd!2sPermanentn%C3%AD%20make-up%20Katar%C3%ADna%20Za%C5%A5kov%C3%A1!5e0!3m2!1scs!2scz!4v1714123456789!5m2!1scs!2scz" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        title="Mapa salonu Katarína Zaťková">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cream py-12 border-t border-soft-pink">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="font-serif text-xl text-rose-gold font-bold mb-4 tracking-wider uppercase">Katarína Zaťková</p>
+            <div class="flex flex-col items-center space-y-4">
+                <p class="text-gray-500 text-sm">© 2026 Permanentní Make-up Katarína Zaťková Brno.</p>
+                <p class="text-gray-500 text-sm">Všechna práva vyhrazena.</p>
+                <a href="obchodni-podminky.html" class="text-rose-gold hover:text-soft-pink-dark text-sm font-medium transition-colors border-b border-transparent hover:border-soft-pink-dark">
+                    Smluvní podmínky
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Reveal Animation on Scroll
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Stop observing once visible to preserve performance
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .fade-in').forEach((el) => observer.observe(el));
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Documents Dropdown Toggle
+        const docsBtn = document.getElementById('docs-dropdown-button');
+        const docsMenu = document.getElementById('docs-dropdown-menu');
+
+        if (docsBtn && docsMenu) {
+            docsBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                docsMenu.classList.toggle('show');
+            });
+
+            // Close dropdown when clicking anywhere else
+            document.addEventListener('click', () => {
+                docsMenu.classList.remove('show');
+            });
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
